@@ -2,23 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Periode;
+use App\Models\Prodi;
 use Illuminate\Http\Request;
 
-class PeriodeController extends Controller
+class ProdiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // akses model periode
-        $result = Periode::all(); // select * from periode
-        //dd($result); // dump data
-        // kirim data periode ke view
-        // return view('periode.index')->with('periode', $result);
-        // atau compact
-        return view('Periode.index', compact('result'));
+        $prodis = Prodi::with('fakultas')->get();
+        return view('prodi.index', compact('prodis'));
     }
 
     /**
@@ -40,7 +35,7 @@ class PeriodeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Periode $periode)
+    public function show(Prodi $prodi)
     {
         //
     }
@@ -48,7 +43,7 @@ class PeriodeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Periode $periode)
+    public function edit(Prodi $prodi)
     {
         //
     }
@@ -56,7 +51,7 @@ class PeriodeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Periode $periode)
+    public function update(Request $request, Prodi $prodi)
     {
         //
     }
@@ -64,7 +59,7 @@ class PeriodeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Periode $periode)
+    public function destroy(Prodi $prodi)
     {
         //
     }
