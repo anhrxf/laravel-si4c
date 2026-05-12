@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('periodes', function (Blueprint $table) {
             $table->id();
             $table->string('tahun_akademik', 9); //2025/2026
-            $table->char('kode_smt', 1); // 1 gasal, 2 genap
+            $table->char('kode_semester', 1); // 1 gasal, 2 genap
             $table->timestamps();
         });
     }

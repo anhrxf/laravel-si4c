@@ -1,27 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
-<body>
-    <form action="/fakultas" method="POST">
-    <div class="mb-3">
-        <h5>Form Pengisian Data Fakultas</h5>
-    <label for="Nama" class="form-label">Nama Fakultas</label>
-    <input type="text" class="form-control" id="Nama" placeholder="Masukkan Nama Fakultas">
+@extends('main')
 
-    <label for="Singkatan" class="form-label">Singkatan Fakultas</label>
-    <input type="text" class="form-control" id="Singkatan" placeholder="Masukkan Singkatan Fakultas">
+@section('title', 'Tambah Fakultas')
 
-    <label for="Dekan" class="form-label">Nama Dekan Fakultas</label>
-    <input type="text" class="form-control" id="Dekan" placeholder="Masukkan Nama Dekan Fakultas">
-    <button type="submit" class="btn btn-primary mt-3">submit</button>
-</div>
-</form>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
-</html>
+@section('content')
+    <form action="{{ route('fakultas.store') }}" method="POST">
+        @csrf
+        <div class="form-group">
+            <label for="nama_fakultas">Nama Fakultas</label>
+            <input type="text" name="nama" class="form-control" value ="{{ old('nama') }}">
+            @error("nama")
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="singkatan">Singkatan</label>
+            <input type="text" name="singkatan" class="form-control" value ="{{ old('singkatan') }}">
+            @error("singkatan")
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="dekan">Dekan</label>
+            <input type="text" name="dekan" class="form-control" value ="{{ old('dekan') }}">
+            @error("dekan")
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+@endsection

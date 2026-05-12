@@ -344,9 +344,15 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="{{ route('fakultas') }}" class="nav-link">
+                <a href="{{ url('fakultas') }}" class="nav-link">
                   <i class="nav-icon bi bi-bank"></i>
                   <p>Fakultas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('periode') }}" class="nav-link">
+                  <i class="nav-icon bi bi-calendar"></i>
+                  <p>Periode</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -764,7 +770,7 @@
             <!--begin::Row-->
             <div class="row">
               <div class="col-sm-6">
-                <h3 class="mb-0">b:yield</h3>
+                <h3 class="mb-0">@yield('title')</h3>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
@@ -810,7 +816,7 @@
                       </button>
                     </div>
                   </div>
-                  <div class="card-body">b:yield</div>
+                  <div class="card-body">@yield('content')</div>
                   <!-- /.card-body -->
                   <div class="card-footer">Footer</div>
                   <!-- /.card-footer-->
