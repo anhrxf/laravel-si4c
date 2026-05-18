@@ -1,5 +1,6 @@
 @extends('main')
 @section('content')
+<a href="{{ route('prodi.create') }}" class="btn btn-primary mb-3">Tambah Program Studi</a>
 @section('title', 'Program Studi')
 
 <h1>Data Prodi</h1>
