@@ -358,7 +358,13 @@
               <li class="nav-item">
                 <a href="{{ url('prodi') }}" class="nav-link">
                   <i class="nav-icon bi bi-mortarboard-fill"></i>
-                  <p>prodi</p>
+                  <p>Program Studi</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('mahasiswa') }}" class="nav-link">
+                  <i class="nav-icon bi bi-mortarboard-fill"></i>
+                  <p>Mahasiswa</p>
                 </a>
               </li>
               <li class="nav-item">

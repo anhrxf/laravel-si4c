@@ -11,6 +11,6 @@ class Mahasiswa extends Model
     //relasi mahasiswa ke prodi
     public function prodi()
     {
-        return $this->belongsTo(prodi::class);
+        return $this->belongsTo(Prodi::class);
     }
 }

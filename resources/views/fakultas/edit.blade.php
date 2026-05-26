@@ -15,14 +15,14 @@
     </div>
     <div class="form-group">
         <label for="singkatan"> Singkatan</label>
-        <input type="text" name="singkatan" class="form-control" value="{{old('singkatan')}}">
+        <input type="text" name="singkatan" class="form-control" value="{{old('singkatan') ?? $fakultas->singkatan }}">
         @error('singkatan')
             <div class="text-danger">{{ $message }}</div>
         @enderror
     </div>
     <div class="form-group">
         <label for="dekan"> Dekan</label>
-        <input type="text" name="dekan" class="form-control" value="{{old('dekan')}}">
+        <input type="text" name="dekan" class="form-control" value="{{old('dekan') ?? $fakultas->dekan }}">
         @error('dekan')
             <div class="text-danger">{{ $message }}</div>
         @enderror
