@@ -18,7 +18,7 @@ class PeriodeController extends Controller
         // kirim data periode ke view
         // return view('periode.index')->with('periode', $result);
         // atau compact
-        return view('Periode.index', compact('result'));
+        return view('periode.index', compact('result'));
     }
 
     /**
@@ -35,13 +35,13 @@ class PeriodeController extends Controller
     public function store(Request $request)
     {
         //validasi data periode
-        $input = $request->validate([
-            'tahun_akademik' => 'required|unique:periodes',
+        $request = $request->validate([
+            'tahun_akademik' => 'required',
             'kode_semester' => 'required'
         ]);
     
         //simpan data periode
-        Periode::create($input);
+        Periode::create($request);
         
         //redirect ke halaman index periode
         return redirect()->route('periode.index');
@@ -76,6 +76,7 @@ class PeriodeController extends Controller
      */
     public function destroy(Periode $periode)
     {
-        //
+        $periode->delete();
+        return redirect()->route('periode.index')->with('success', 'Data Periode berhasil dihapus');
     }
 }
