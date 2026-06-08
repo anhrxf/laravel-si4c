@@ -19,6 +19,4 @@ Route::resource('/prodi', ProdiController::class);
 Route::resource('/periode', PeriodeController::class);
 Route::resource('/berita', BeritaController::class);
 Route::resource('/mahasiswa', MahasiswaController::class);
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->nama('dashboard');
-
-route::middleware('auth')->group()
+Route::get('/dashboard', [DashboardController::class, 'index']);
